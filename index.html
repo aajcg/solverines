@@ -208,6 +208,29 @@
             }
         }
 
+        /* Hero after scrolling */
+        .header.scrolled {
+            background: white;
+            transition: background 0.55s ease;
+        }
+
+        .header.scrolled .nav-link,
+        .header.scrolled .contact-btn {
+            color: black; /* adjust for contrast */
+        }
+
+        .header.scrolled .nav-links {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1.2px solid rgba(0, 0, 0, 0.1);
+            color: black;
+        }
+        .header.scrolled .contact-btn {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1.2px solid rgba(0, 0, 0, 0.1);
+            color: black;
+        }
+
+
         /* Quote Section */
         .quote {
             height: 155px;
@@ -1184,6 +1207,21 @@
             // Initialize slider
             updateSlider();
         });
+
+        // Change header background & logo on scroll
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector(".header");
+            const logoImg = header.querySelector(".logo img");
+
+            if (window.scrollY > 5) {
+                header.classList.add("scrolled");
+                logoImg.src = "assets/logo2.png"; // new logo
+            } else {
+                header.classList.remove("scrolled");
+                logoImg.src = "assets/solverines logo b64.png"; // original logo
+            }
+        });
+
     </script>
 </body>
 </html>
