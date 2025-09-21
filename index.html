@@ -642,10 +642,11 @@
 
         /* Footer */
         .footer {
-            height: 710px;
-            background: linear-gradient(77.28deg, rgba(2, 0, 96, 0.94) -2.96%, rgba(64, 135, 218, 0.94) 118.61%);
+            /* height: 710px; */
+            /* background: linear-gradient(77.28deg, rgba(2, 0, 96, 0.94) -2.96%, rgba(64, 135, 218, 0.94) 118.61%); */
             color: white;
-            padding: 69px 80px;
+            width: auto;
+            /* padding: 69px 80px; */
             position: relative;
         }
 
@@ -928,7 +929,6 @@
             <h3 class="global-subtitle">Transforming Businesses with Low Code Solutions using OutSystems</h3>
             <p class="global-description">We deliver customized low-code solutions across industries worldwide, driving efficiency, productivity, and innovation. From consulting to implementation and support, we provide end-to-end expertise to accelerate your digital transformation.</p>
         </div>
-        <!-- <div class="global-image"></div> -->
     </section>
 
     <!-- Services Section -->
@@ -1088,7 +1088,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="footer-logo">SOLVERINES</div>
         
         <div class="footer-tagline">Transforming Businesses with Low Code Solutions using OutSystems</div>
@@ -1158,8 +1158,8 @@
                 <a href="#">Terms of Use</a>
             </div>
         </div>
-    </footer>
-
+    </footer> -->
+    <footer class="footer"></footer>
     <script>
         // Services slider functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -1220,6 +1220,17 @@
                 header.classList.remove("scrolled");
                 logoImg.src = "assets/solverines logo b64.png"; // original logo
             }
+        });
+
+        
+        // Load footer from footer.html
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector("footer.footer").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading footer:", error));
         });
 
     </script>
